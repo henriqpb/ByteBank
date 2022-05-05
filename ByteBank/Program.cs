@@ -1,4 +1,5 @@
 ﻿using bytebank;
+using bytebank.Titular;
 
 Console.WriteLine("Boas Vinda ao seu banco, ByteBank!");
 
@@ -39,10 +40,24 @@ Console.WriteLine("Boas Vinda ao seu banco, ByteBank!");
 
 //conta1.ExibirDadosDaConta();
 
+//Cliente cliente = new Cliente();
+//cliente.nome = "Andre Silva";
+//cliente.cpf = "1076546512130";
+//cliente.profissao = "Programador C#";
+
 Cliente cliente = new Cliente();
+
 cliente.nome = "Andre Silva";
-cliente.cpf = "1076546512130";
+cliente.cpf = "102579543132";
 cliente.profissao = "Programador C#";
 
+ContaCorrente conta3 = new ContaCorrente();
+conta3.titular = cliente;
+conta3.conta = "24654213-x";
+conta3.numeroAgencia = 35;
+conta3.nomeAgencia = "Agencia Central";
+
+Console.WriteLine(cliente.nome);
+Console.WriteLine(conta3.titular.nome);
 
 Console.ReadKey();  
