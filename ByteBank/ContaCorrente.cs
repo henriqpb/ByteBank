@@ -4,11 +4,37 @@ namespace bytebank
 {
     public class ContaCorrente
     {
-        public Cliente titular;
-        public string conta;
-        public int numeroAgencia;
-        public string nomeAgencia;
-        public double saldo;
+        
+        public Cliente Titular { get; set; }
+
+        public string NomeAgencia { get; set; }
+
+        public int NumeroAgencia { get; set; }
+
+        public string Conta { get; set; }
+
+        private double saldo;
+
+        public double Saldo
+        {
+            get
+            {
+                return saldo;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    return;
+                }
+                else 
+                {
+                    saldo = value;
+                }
+            }-
+        }    
+       
+        
 
         public bool Sacar(double valor)
         {
@@ -50,14 +76,6 @@ namespace bytebank
                 return true;
             }
         }
-
-        public void ExibirDadosDaConta()
-        {
-            Console.WriteLine("Titular: " + titular);
-            Console.WriteLine("Conta: " + conta);
-            Console.WriteLine("Nome da Agência: " + nomeAgencia);
-            Console.WriteLine("Número da Agência: " + numeroAgencia);
-            Console.WriteLine("Saldo: " + saldo);
-        }
+                                       
     }   
 }
